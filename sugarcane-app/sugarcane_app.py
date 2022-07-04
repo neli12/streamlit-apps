@@ -5,7 +5,8 @@ from streamlit_folium import folium_static
 import geopandas as gp
 from pathlib import Path
 
-dados = Path(__file__).parents[0] / 'area_shp.shp'
+area = Path(__file__).parents[0] / 'area_shp.shp'
+dados = Path(__file__).parents[0] / 'dados.csv'
 
 
 st.set_page_config(layout = 'wide')
@@ -31,13 +32,13 @@ with a:
 
 
 with b:
-	area = gp.read_file(dados)
+	area = gp.read_file(area)
 
 	m = folium.Map(location = [-21.9, -48.2], tiles = 'CartoDB positron',
 		name = "Light Map", zoom_start = 6, attr = "My Data attribution")
 
-	sp_sugarcane = f"dados.csv"
-	sp_sugarcane_data = pd.read_csv(sp_sugarcane, encoding ='ISO-8859-1', sep = ';')
+	##sp_sugarcane = f"dados.csv"
+	sp_sugarcane_data = pd.read_csv(dados, encoding ='ISO-8859-1', sep = ';')
 
 	yield_options = ['YIELD_2000', 'YIELD_2001', 'YIELD_2002', 'YIELD_2003',
 	'YIELD_2004', 'YIELD_2005', 'YIELD_2006', 'YIELD_2007', 'YIELD_2008',
