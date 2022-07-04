@@ -18,13 +18,14 @@ with a:
 	st.write('''
 		***Descrição***
 
-		Olá! Seja bem vindo. Esta é uma plataforma desenvolvida para mostrar a variabilidade da produtividade da cana-de-açúcar ao longo dos últimos 21 anos.
+		Olá! Seja bem vindo. Esta é uma plataforma desenvolvida para mostrar a variabilidade da produtividade da cana-de-açúcar ao longo dos últimos 21 anos, um projeto desenvolvido 
+		como parte do MBA em Data Science and Analytics da Esalq USP. Aqui você irá encontrar a variabilidade e a predição da produtividade para o ano de 2021, além de outras informações relacionadas a clima, solo e temperatura.
 
-		Esta é uma parte do projeto relacionado ao TCC no MBA em Data Science and Analytics da Esalq USP. Aqui você irá encontrar a variabilidade e a predição da produtividade para o ano de 2021, além de outras informações relacionadas a clima, solo e temperatura.
-
-		Para estimar a produtividade da cana-de açúcar para o ano de 2021, foi utilizado a análise "dados em panel".
+		Para estimar a produtividade da cana-de açúcar para o ano de 2021, a análise de "dados em panel" será utilizada.
 
 		Os dados de produtividade foram coletados do IBGE e os dados de solo, clima e temperatura, da plataforma Google Earth Engine.
+		
+		Em breve mais atualizações!
 
 		Espero que você goste! :)
 
