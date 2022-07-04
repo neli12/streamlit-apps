@@ -3,6 +3,10 @@ import pandas as pd
 import folium
 from streamlit_folium import folium_static
 import geopandas as gp
+from pathlib import Path
+
+dados = Path(__file__).parents[0] / 'area_shp.shp'
+
 
 st.set_page_config(layout = 'wide')
 
@@ -27,7 +31,7 @@ with a:
 
 
 with b:
-	area = gp.read_file('area_shp.shp')
+	area = gp.read_file(dados)
 
 	m = folium.Map(location = [-21.9, -48.2], tiles = 'CartoDB positron',
 		name = "Light Map", zoom_start = 6, attr = "My Data attribution")
