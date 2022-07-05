@@ -20,7 +20,7 @@ def load_data():
 
 def load_area():
 	area = gp.read_file(area)
-	return area
+return area
 	
 a,b = st.columns([5,8])
 
