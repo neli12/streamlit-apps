@@ -8,10 +8,20 @@ from pathlib import Path
 area = Path(__file__).parents[0] / 'area_shp.shp'
 dados = Path(__file__).parents[0] / 'dados.csv'
 
-#@st.cache
+
 st.set_page_config(layout = 'wide')
 
 st.title('Produtividade da cana-de açúcar (kg/ha) nos anos 2000 a 2020')
+
+@st.cache
+def load_data():
+	sp_sugarcane_data = pd.read_csv(dados, encoding ='ISO-8859-1', sep = ';')
+	return sp_sugarcane_data
+
+def load_area():
+	area = gp.read_file(area)
+	return area
+	
 a,b = st.columns([5,8])
 
 with a:
@@ -33,13 +43,13 @@ with a:
 
 
 with b:
-	area = gp.read_file(area)
+	area = load_area
 
 	m = folium.Map(location = [-21.9, -48.2], tiles = 'CartoDB positron',
 		name = "Light Map", zoom_start = 6, attr = "My Data attribution")
 
 	##sp_sugarcane = f"dados.csv"
-	sp_sugarcane_data = pd.read_csv(dados, encoding ='ISO-8859-1', sep = ';')
+	sp_sugarcane_data = load_data
 
 	yield_options = ['YIELD_2000', 'YIELD_2001', 'YIELD_2002', 'YIELD_2003',
 	'YIELD_2004', 'YIELD_2005', 'YIELD_2006', 'YIELD_2007', 'YIELD_2008',
