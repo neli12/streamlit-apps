@@ -43,13 +43,13 @@ with a:
 
 
 with b:
-	area = load_area
+	area = load_area()
 
 	m = folium.Map(location = [-21.9, -48.2], tiles = 'CartoDB positron',
 		name = "Light Map", zoom_start = 6, attr = "My Data attribution")
 
 	##sp_sugarcane = f"dados.csv"
-	sp_sugarcane_data = load_data
+	sp_sugarcane_data = load_data()
 
 	yield_options = ['YIELD_2000', 'YIELD_2001', 'YIELD_2002', 'YIELD_2003',
 	'YIELD_2004', 'YIELD_2005', 'YIELD_2006', 'YIELD_2007', 'YIELD_2008',
