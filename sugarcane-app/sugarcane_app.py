@@ -8,7 +8,7 @@ from pathlib import Path
 area = Path(__file__).parents[0] / 'area_shp.shp'
 dados = Path(__file__).parents[0] / 'dados.csv'
 
-@st.cache
+#@st.cache
 st.set_page_config(layout = 'wide')
 
 st.title('Produtividade da cana-de açúcar (kg/ha) nos anos 2000 a 2020')
