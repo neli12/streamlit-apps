@@ -5,8 +5,8 @@ from streamlit_folium import folium_static
 import geopandas as gp
 from pathlib import Path
 
-area = Path(__file__).parents[0] / 'area_shp.shp'
-dados = Path(__file__).parents[0] / 'dados.csv'
+area_path = Path(__file__).parents[0] / 'area_shp.shp'
+dados_path = Path(__file__).parents[0] / 'dados.csv'
 
 
 st.set_page_config(layout = 'wide')
@@ -15,11 +15,11 @@ st.title('Produtividade da cana-de açúcar (kg/ha) nos anos 2000 a 2020')
 
 @st.cache
 def load_data():
-	sp_sugarcane_data = pd.read_csv(dados, encoding ='ISO-8859-1', sep = ';')
+	sp_sugarcane_data = pd.read_csv(dados_path, encoding ='ISO-8859-1', sep = ';')
 	return sp_sugarcane_data
 
 def load_area():
-	area = gp.read_file(area)
+	area = gp.read_file(area_path)
 	return area
 	
 a,b = st.columns([5,8])
