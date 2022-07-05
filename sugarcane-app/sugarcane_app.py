@@ -60,7 +60,7 @@ with b:
 	selected = st.selectbox('Select choice', yield_options)
 
 	folium.Choropleth(
-		geo_data = area,
+		geo_data = area1,
 		name = "choropleth",
 		data = sp_sugarcane_data,
 		columns = ["NM_MUN", selected],
