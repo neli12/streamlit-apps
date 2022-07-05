@@ -33,6 +33,7 @@ with a:
 
 
 with b:
+	@st.cache
 	area = gp.read_file(area)
 
 	m = folium.Map(location = [-21.9, -48.2], tiles = 'CartoDB positron',
