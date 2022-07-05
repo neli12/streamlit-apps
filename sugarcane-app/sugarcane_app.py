@@ -20,7 +20,7 @@ def load_data():
 
 def load_area():
 	area = gp.read_file(area)
-return area
+	return area
 	
 a,b = st.columns([5,8])
 
@@ -43,7 +43,7 @@ with a:
 
 
 with b:
-	area = load_area()
+	area1 = load_area()
 
 	m = folium.Map(location = [-21.9, -48.2], tiles = 'CartoDB positron',
 		name = "Light Map", zoom_start = 6, attr = "My Data attribution")
